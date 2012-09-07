@@ -1,0 +1,85 @@
+<%= form_for(@beneficiaire) do |f| %>
+  <% if @beneficiaire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@beneficiaire.errors.count, "erreur") %> Veuillez corriger les erreurs suivantes</h2>
+
+      <ul>
+      <% @beneficiaire.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+	<p>
+	  <small>Tout les champs marqu&eacute;s avec un ast&eacute;risque(*) sont obligatoires </small>
+	</p>
+	<div class="span4">
+		<div class="input-prepend" >
+	  	
+	    <%= f.label :antenne_id, 'Antenne *' %><br />
+	    <div class="span add-on"><i class="icon-list"></i></div>
+	    <%= f.select :antenne_id, options_from_collection_for_select(@listAntenne, "id", "nom", @beneficiaire.antenne_id) %>
+	  </div>
+	  <div class="input-prepend" >
+	  	
+	    <%= f.label :nom, 'Nom *' %><br />
+	    <div class="span add-on"><i class="icon-user"></i></div>
+	    <%= f.text_field :nom %>
+	  </div>
+	  <div class="input-prepend">
+	    <%= f.label :prenom, 'Prenom *' %><br />
+	    <div class="span add-on"><i class="icon-user"></i></div>
+	    <%= f.text_field :prenom %>
+	  </div>
+	  <div class="input-prepend">
+	    <%= f.label :date_naiss, 'Date de Naissance *' %><br />
+	    <div class="span add-on"><i class="icon-time"></i></div>
+	    <%= f.date_select :date_naiss, :order => [:day, :month, :year], :use_month_names => [t(:jan), t(:feb), t(:mar), t(:apr), t(:may), t(:jun), t(:jul), t(:aug), t(:sep), t(:oct), t(:nov), t(:dec)], :start_year =>  Time.now.year - 100, :end_year =>  Time.now.year - 16%>
+	  </div>
+	  <div class="input-prepend">
+	    <%= f.label :dept_naiss, 'Departement de Naissance' %><br />
+	     <div class="span add-on"><i class="icon-time"></i></div>
+	    <%= f.select :dept_naiss, options_for_select((1...99).to_a, 01) %>
+	  </div>
+	  <div class="input-prepend">
+	    <%= f.label :sexe, 'Sexe *' %><br />
+	     <div class="span add-on"><i class="icon-user"></i></div>
+	    <%= f.select :sexe, options_for_select(['Masculin', 'Feminin'], 'Masculin') %>
+	  </div>
+	  
+	</div>
+	<div class="span 2">
+	  <div class="input-prepend">
+	    <%= f.label :adresse, 'Adresse *' %><br />
+	     <div class="span add-on"><i class="icon-envelope"></i></div>
+	    <%= f.text_field :adresse %>
+	  </div>
+	  <div class="input-prepend">
+	    <%= f.label :code_pos, 'Code Postal *' %><br />
+	     <div class="span add-on"><i class="icon-home"></i></div>
+	    <%= f.text_field :code_pos %>
+	  </div>
+	  <div class="input-prepend">
+	    <%= f.label :ville, 'Ville *' %><br />
+	     <div class="span add-on"><i class="icon-envelope"></i></div>
+	    <%= f.text_field :ville %>
+	  </div>
+	  <div class="input-prepend">
+	    <%= f.label :fixe, 'Telephone Fixe' %><br />
+	     <div class="span add-on"><i class="icon-time"></i></div>
+	    <%= f.text_field :fixe %>
+	  </div>
+	  <div class="input-prepend">
+	    <%= f.label :portable, 'Telephone Portable' %><br />
+	     <div class="span add-on"><i class="icon-time"></i></div>
+	    <%= f.text_field :portable %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit 'Valider' %>
+	</div>
+	</div> 
+	
+</div>   
+<% end %>

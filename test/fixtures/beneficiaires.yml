@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nom: MyString
+  prenom: MyString
+  date_naiss: 2012-09-06
+  dept_naiss: 1
+  adresse: 
+  code_pos: 1
+  ville: MyString
+  fixe: 1
+  portable: 1
+
+two:
+  nom: MyString
+  prenom: MyString
+  date_naiss: 2012-09-06
+  dept_naiss: 1
+  adresse: 
+  code_pos: 1
+  ville: MyString
+  fixe: 1
+  portable: 1

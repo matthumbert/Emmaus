@@ -1,0 +1,46 @@
+<a href="/" class="btn btn large">
+	<i class="icon-backward"></i> Retour aux Op&eacute;rations
+</a>
+
+
+<a href="beneficiaires/new" class="btn btn large">
+		  	
+		  Nouveau B&eacute;n&eacute;ficiaire
+</a>
+
+<h1>Les beneficiaires</h1>
+
+<table class="table table-condensed table-bordered table-striped ">
+  <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Date Naissance</th>
+    <th>Departement</th>
+    <th>Adresse</th>
+    <th>Code postal</th>
+    <th>Ville</th>
+    <th>Fixe</th>
+    <th>Portable</th>
+    
+  </tr>
+
+<% @beneficiaires.each do |beneficiaire| %>
+  <tr>
+    <td><%= link_to beneficiaire.nom, beneficiaire %></a></td>
+    <td><%= beneficiaire.prenom %></td>
+    <td><%= beneficiaire.date_naiss.strftime('%d/%m/%Y') %></td>
+    <td><%= beneficiaire.dept_naiss %></td>
+    <td><%= beneficiaire.adresse %></td>
+    <td><%= beneficiaire.code_pos %></td>
+    <td><%= beneficiaire.ville %></td>
+    <td><%= beneficiaire.fixe %></td>
+    <td><%= beneficiaire.portable %></td>
+    
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

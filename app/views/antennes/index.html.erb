@@ -1,0 +1,34 @@
+<a href="/" class="btn btn large">
+	<i class="icon-backward"></i> Retour aux Op&eacute;rations
+</a>
+
+
+<a href="antennes/new" class="btn btn large">	
+		  Nouvelle Antenne
+</a>
+<br/>
+<h1>Les antennes</h1>
+
+<table class="table table-condensed table-bordered table-striped table-hover">
+  <tr>
+    <th>Nom</th>
+    <th>Adresse</th>
+    <th>Code postal</th>
+    <th>Ville</th>
+    <th>Telephone</th>
+    <th>Mail</th>
+  </tr>
+
+<% @antennes.each do |antenne| %>
+  <tr>
+    <td><%= link_to antenne.nom, antenne%></td>
+    <td><%= antenne.adresse %></td>
+    <td><%= antenne.code_pos %></td>
+    <td><%= antenne.ville %></td>
+    <td><%= antenne.telephone %></td>
+    <td><%= antenne.mail %></td>  
+  </tr>
+<% end %>
+</table>
+
+<br />

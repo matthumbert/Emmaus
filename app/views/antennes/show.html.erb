@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<a class = "btn" href="/antennes">Retour</a>	
+<a class="btn" href = <%= edit_antenne_path(@antenne) %>> Editer</a>
+<div class="btn" > <%= link_to 'Supprimer', @antenne, method: :delete, data: { confirm: 'Etes vous sure?' } %></div>
+
+<p>
+  <b>Nom:</b>
+  <%= @antenne.nom %>
+</p>
+
+<p>
+  <b>Adresse:</b>
+  <%= @antenne.adresse %>
+</p>
+
+<p>
+  <b>Code pos:</b>
+  <%= @antenne.code_pos %>
+</p>
+
+<p>
+  <b>Ville;string:</b>
+  <%= @antenne.ville %>
+</p>
+
+<p>
+  <b>Telephone:</b>
+  <%= @antenne.telephone %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @antenne.mail %>
+</p>
+
+
+<%= link_to 'Edit', edit_antenne_path(@antenne) %> |
+<%= link_to 'Back', antennes_path %>

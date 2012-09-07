@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<a class = "btn" href="/beneficiaires">Retour</a>	
+<a class="btn" href = <%= edit_beneficiaire_path(@beneficiaire) %>> Editer</a>
+<div class="btn" > <%= link_to 'Supprimer', @beneficiaire, method: :delete, data: { confirm: 'Etes vous sure?' } %></div>
+
+
+<p>
+  <b>Nom:</b>
+  <%= @beneficiaire.nom %>
+</p>
+
+<p>
+  <b>Prenom:</b>
+  <%= @beneficiaire.prenom %>
+</p>
+
+<p>
+  <b>Date naiss:</b>
+  <%= @beneficiaire.date_naiss %>
+</p>
+
+<p>
+  <b>Dept naiss:</b>
+  <%= @beneficiaire.dept_naiss %>
+</p>
+
+<p>
+  <b>Adresse:</b>
+  <%= @beneficiaire.adresse %>
+</p>
+
+<p>
+  <b>Code pos:</b>
+  <%= @beneficiaire.code_pos %>
+</p>
+
+<p>
+  <b>Ville:</b>
+  <%= @beneficiaire.ville %>
+</p>
+
+<p>
+  <b>Fixe:</b>
+  <%= @beneficiaire.fixe %>
+</p>
+
+<p>
+  <b>Portable:</b>
+  <%= @beneficiaire.portable %>
+</p>
+
+
+
