@@ -1,15 +1,16 @@
 Emmaus::Application.routes.draw do
   
+  resources :sessions, only: [:new, :create, :destroy] 
  
-  resources :users
-
   resources :antennes
 
   resources :beneficiaires
 
-  root to: 'static#home'
+  root to: 'sessions#new'
   
-  
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete 
+  match '/home',    to: 'static#home'
   
   
   
