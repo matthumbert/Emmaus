@@ -2,55 +2,75 @@
 
 <p id="notice"><%= notice %></p>
 
-<a class = "btn" href="/beneficiaires">Retour</a>	
-<a class="btn" href = <%= edit_beneficiaire_path(@beneficiaire) %>> Editer</a>
-<div class="btn" > <%= link_to 'Supprimer', @beneficiaire, method: :delete, data: { confirm: 'Etes vous sure?' } %></div>
+<div>
+	<img  src = "../assets/Beneficiaire_title.png" />
+	<br/>
+	<a class = "btn btn-large" href="/beneficiaires"><i class="icon-backward"></i></a>	
+	<a class="btn btn-large" href = <%= edit_beneficiaire_path(@beneficiaire) %>> Editer</a>
+	<div class="btn btn-large" > 
+		<i class="icon-remove"></i>
+		<%= link_to '', @beneficiaire, method: :delete, data: { confirm: 'Etes vous sure?' } %>
+	</div>
+</div>
+<br />
 
+<div class="span6"> 
+	
+	
+	
+	
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>	
+			<th>Nom</th>
+			<th>Pr&eacute;nom</th>
+			<th>Date de Naissance</th>
+			<th>D&eacute;partement</th>
+			<th>Sexe</th>
+		</tr>
+		
+		<tr>
+			<td><%= @beneficiaire.nom%></td>
+			<td><%= @beneficiaire.prenom%></td>
+			<td><%= @beneficiaire.date_naiss%></td>
+			<td><%= @beneficiaire.dept_naiss%></td>
+			<td><%= @beneficiaire.sexe%></td>
+		</tr>
+	</table>
+	<br />
+	<table class="table table-bordered table-condensed table-striped">		
+		<th>Antenne</th>
+		<th>T&eacute;l&eacute;phone Antenne</th>
+		
+		
+		<tr>	
+			<td><%= @antenne.nom%></td>
+			<td><%= @antenne.telephone%></td>	
+		</tr>
+	</table>
+	<br />
+	
+	
+	<table class="table table-bordered table-condensed table-striped">	
+			<th>Adresse</th>
+			<th>Code Postal</th>
+			<th>Ville</th>
+		<tr>
+			<td><%= @beneficiaire.adresse%></td>
+			<td><%= @beneficiaire.code_pos%></td>
+			<td><%= @beneficiaire.ville%></td>
+		</tr>
+	</table>
+	<br />
+	<table class="table table-bordered table-condensed table-striped">		
+		<th>T&eacute;l&eacute;phone Fixe</th>
+		<th>T&eacute;l&eacute;phone Portable</th>
+		<tr>	
+			<td><%= @beneficiaire.fixe%></td>
+			<td><%= @beneficiaire.portable%></td>
+		</tr>
+	</table>		
 
-<p>
-  <b>Nom:</b>
-  <%= @beneficiaire.nom %>
-</p>
-
-<p>
-  <b>Prenom:</b>
-  <%= @beneficiaire.prenom %>
-</p>
-
-<p>
-  <b>Date naiss:</b>
-  <%= @beneficiaire.date_naiss %>
-</p>
-
-<p>
-  <b>Dept naiss:</b>
-  <%= @beneficiaire.dept_naiss %>
-</p>
-
-<p>
-  <b>Adresse:</b>
-  <%= @beneficiaire.adresse %>
-</p>
-
-<p>
-  <b>Code pos:</b>
-  <%= @beneficiaire.code_pos %>
-</p>
-
-<p>
-  <b>Ville:</b>
-  <%= @beneficiaire.ville %>
-</p>
-
-<p>
-  <b>Fixe:</b>
-  <%= @beneficiaire.fixe %>
-</p>
-
-<p>
-  <b>Portable:</b>
-  <%= @beneficiaire.portable %>
-</p>
+</div>
 
 
 

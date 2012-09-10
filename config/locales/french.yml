@@ -11,3 +11,10 @@ french:
   oct: Octobre
   nov: Novembre
   dec: Decembre
+  
+  
+  activerecord:
+    errors:
+      models:
+        beneficiaire:
+          blank: " : Le champ est obligatoire"

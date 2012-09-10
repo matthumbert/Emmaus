@@ -18,7 +18,7 @@ class AntennesControllerTest < ActionController::TestCase
 
   test "should create antenne" do
     assert_difference('Antenne.count') do
-      post :create, antenne: { adresse: @antenne.adresse, code_pos: @antenne.code_pos, mail: @antenne.mail, nom: @antenne.nom, telephone: @antenne.telephone, ville;string: @antenne.ville;string }
+      post :create, antenne: { adresse: @antenne.adresse, code_pos: @antenne.code_pos, mail: @antenne.mail, nom: @antenne.nom, telephone: @antenne.telephone, ville: @antenne.ville }
     end
 
     assert_redirected_to antenne_path(assigns(:antenne))
@@ -35,7 +35,7 @@ class AntennesControllerTest < ActionController::TestCase
   end
 
   test "should update antenne" do
-    put :update, id: @antenne, antenne: { adresse: @antenne.adresse, code_pos: @antenne.code_pos, mail: @antenne.mail, nom: @antenne.nom, telephone: @antenne.telephone, ville;string: @antenne.ville;string }
+    put :update, id: @antenne, antenne: { adresse: @antenne.adresse, code_pos: @antenne.code_pos, mail: @antenne.mail, nom: @antenne.nom, telephone: @antenne.telephone, ville: @antenne.ville }
     assert_redirected_to antenne_path(assigns(:antenne))
   end
 

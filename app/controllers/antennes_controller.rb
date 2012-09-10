@@ -42,15 +42,16 @@ class AntennesController < ApplicationController
   def create
     @antenne = Antenne.new(params[:antenne])
 
-    respond_to do |format|
+    
       if @antenne.save
-        format.html { redirect_to @antenne, notice: 'Antenne was successfully created.' }
-        format.json { render json: @antenne, status: :created, location: @antenne }
+        
+        @antennes = Antenne.all
+        render 'index'
       else
-        format.html { render action: "new" }
-        format.json { render json: @antenne.errors, status: :unprocessable_entity }
+        render 'new'
+        
       end
-    end
+   
   end
 
   # PUT /antennes/1
@@ -58,15 +59,11 @@ class AntennesController < ApplicationController
   def update
     @antenne = Antenne.find(params[:id])
 
-    respond_to do |format|
-      if @antenne.update_attributes(params[:antenne])
-        format.html { redirect_to @antenne, notice: 'Antenne was successfully updated.' }
-        format.json { head :no_content }
+    if @antenne.update_attributes(params[:beneficiaire])
+        render 'show'
       else
-        format.html { render action: "edit" }
-        format.json { render json: @antenne.errors, status: :unprocessable_entity }
+        render 'edit'
       end
-    end
   end
 
   # DELETE /antennes/1

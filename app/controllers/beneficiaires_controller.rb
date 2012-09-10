@@ -9,6 +9,7 @@ class BeneficiairesController < ApplicationController
   
   def show  
     @beneficiaire = Beneficiaire.find(params[:id]) 
+    @antenne = Antenne.find(@beneficiaire.antenne_id)
   end
 
   
@@ -30,16 +31,15 @@ class BeneficiairesController < ApplicationController
   def create
     @beneficiaire = Beneficiaire.new(params[:beneficiaire])
 
-    respond_to do |format|
+    
       if @beneficiaire.save
-        format.html { redirect_to @beneficiaire, notice: 'Beneficiaire was successfully created.' }
-        format.json { render json: @beneficiaire, status: :created, location: @beneficiaire }
+        @beneficiaires = Beneficiaire.all
+        render 'index'
       else
         @listAntenne = Antenne.all
-        format.html { render action: "new" }
-        format.json { render json: @beneficiaire.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
+   
   end
 
   # PUT /beneficiaires/1
@@ -47,15 +47,15 @@ class BeneficiairesController < ApplicationController
   def update
     @beneficiaire = Beneficiaire.find(params[:id])
 
-    respond_to do |format|
+ 
       if @beneficiaire.update_attributes(params[:beneficiaire])
-        format.html { redirect_to @beneficiaire, notice: 'Beneficiaire was successfully updated.' }
-        format.json { head :no_content }
+        @antenne = Antenne.find(@beneficiaire.antenne_id)
+        render 'show'
       else
-        format.html { render action: "edit" }
-        format.json { render json: @beneficiaire.errors, status: :unprocessable_entity }
+         @listAntenne = Antenne.all
+        render 'edit'
       end
-    end
+   
   end
 
   # DELETE /beneficiaires/1

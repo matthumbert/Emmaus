@@ -1,41 +1,49 @@
-<%= form_for(@antenne) do |f| %>
-  <% if @antenne.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@antenne.errors.count, "error") %> prohibited this antenne from being saved:</h2>
-
-      <ul>
-      <% @antenne.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :nom %><br />
-    <%= f.text_field :nom %>
-  </div>
-  <div class="field">
-    <%= f.label :adresse %><br />
-    <%= f.text_field :adresse %>
-  </div>
-  <div class="field">
-    <%= f.label :code_pos %><br />
-    <%= f.text_field :code_pos %>
-  </div>
-  <div class="field">
-    <%= f.label :ville%><br />
-    <%= f.text_field :ville %>
-  </div>
-  <div class="field">
-    <%= f.label :telephone %><br />
-    <%= f.text_field :telephone %>
-  </div>
-  <div class="field">
-    <%= f.label :mail %><br />
-    <%= f.text_field :mail %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div>
+	<%= form_for(@antenne) do |f| %>
+	  <% if @antenne.errors.any? %>
+	    <div id="error_explanation" class="alert alert-error">
+	      <h2><%= pluralize(@antenne.errors.count, "erreur") %>. Veuillez corriger les erreurs suivantes : </h2>
+	
+	      <ul>
+	      <% @antenne.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	
+	  <p>
+		  <small>Tout les champs marqu&eacute;s avec un ast&eacute;risque(*) sont obligatoires </small>
+	  </p>	
+	
+	
+	  <div class="field">
+	    <%= f.label :nom %><br />
+	    <%= f.text_field :nom %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :adresse %><br />
+	    <%= f.text_field :adresse %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :code_pos, 'Code Postal' %><br />
+	    <%= f.text_field :code_pos %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :ville%><br />
+	    <%= f.text_field :ville %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :telephone %><br />
+	    <%= f.text_field :telephone %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :mail, 'email' %><br />
+	    <%= f.text_field :mail %>
+	  </div>
+	  <div class="actions">
+	    
+	    <input type="submit" class="btn btn-large btn-primary" value="Valider"/>
+	  </div>
+	<% end %>
+</div>

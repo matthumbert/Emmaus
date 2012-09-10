@@ -10,4 +10,13 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap-datepicker
  */
+
+
+.bottom{
+  position:relative;
+  bottom:0;	
+  margin-left: 50%;
+}
+

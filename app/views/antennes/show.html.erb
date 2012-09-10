@@ -1,40 +1,54 @@
 <%= render 'static/menu' %>
 <p id="notice"><%= notice %></p>
+<div>
+	<img src="/assets/antennes_title.png" />
+	<br/>
+	<a class = "btn btn-large" href="/antennes"><i class="icon-backward"></i>  </a>	
+	<a class="btn btn-large" href = <%= edit_antenne_path(@antenne) %>> Editer</a>
+	<div class="btn btn-large" > 
+		<i class="icon-remove"></i>
+		<%= link_to '', @antenne, method: :delete, data: { confirm: 'Etes vous sure?' } %>
+		
+	</div>
+	
+<div/>
+<br/>
 
-<a class = "btn" href="/antennes">Retour</a>	
-<a class="btn" href = <%= edit_antenne_path(@antenne) %>> Editer</a>
-<div class="btn" > <%= link_to 'Supprimer', @antenne, method: :delete, data: { confirm: 'Etes vous sure?' } %></div>
+<div class="span6"> 
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>	
+			<th>Nom</th>
+			
+		</tr>
+		
+		<tr>
+			<td><%= @antenne.nom%></td>
+			
+		</tr>
+	</table>
+	<br />
+	<table class="table table-bordered table-condensed table-striped">	
+			<th>Adresse</th>
+			<th>Code Postal</th>
+			<th>Ville</th>
+		<tr>
+			<td><%= @antenne.adresse%></td>
+			<td><%= @antenne.code_pos%></td>
+			<td><%= @antenne.ville%></td>
+		</tr>
+	</table>
+	<br />
+	<table class="table table-bordered table-condensed table-striped">		
+		<th>T&eacute;l&eacute;phone</th>
+		<th>Email</th>
+		<tr>	
+			<td><%= @antenne.telephone%></td>
+			<td><%= @antenne.mail%></td>
+		</tr>
+	</table>		
 
-<p>
-  <b>Nom:</b>
-  <%= @antenne.nom %>
-</p>
-
-<p>
-  <b>Adresse:</b>
-  <%= @antenne.adresse %>
-</p>
-
-<p>
-  <b>Code pos:</b>
-  <%= @antenne.code_pos %>
-</p>
-
-<p>
-  <b>Ville;string:</b>
-  <%= @antenne.ville %>
-</p>
-
-<p>
-  <b>Telephone:</b>
-  <%= @antenne.telephone %>
-</p>
-
-<p>
-  <b>Mail:</b>
-  <%= @antenne.mail %>
-</p>
+</div>
 
 
-<%= link_to 'Edit', edit_antenne_path(@antenne) %> |
-<%= link_to 'Back', antennes_path %>
+		
+
