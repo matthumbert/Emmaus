@@ -59,7 +59,7 @@ class AntennesController < ApplicationController
   def update
     @antenne = Antenne.find(params[:id])
 
-    if @antenne.update_attributes(params[:beneficiaire])
+    if @antenne.update_attributes(params[:antenne])
         render 'show'
       else
         render 'edit'

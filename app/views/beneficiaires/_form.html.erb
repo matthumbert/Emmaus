@@ -38,7 +38,7 @@
 		    <%= f.label :date_naiss, 'Date de Naissance *' %><br />
 		    <div class="span add-on"><i class="icon-time"></i></div>
 		    
-		    <%= f.date_select :date_naiss, :order => [:day, :month, :year], :use_month_names => [t(:jan), t(:feb), t(:mar), t(:apr), t(:may), t(:jun), t(:jul), t(:aug), t(:sep), t(:oct), t(:nov), t(:dec)], :start_year =>  Time.now.year - 100, :end_year =>  Time.now.year - 16%>
+		    <%= f.text_field :date_naiss, :class => "datepicker", 'data-behaviour' => 'datepicker', 'data-date-format'=> 'dd/mm/yyyy'%>
 		  </div>
 		  <div class="input-prepend">
 		    <%= f.label :dept_naiss, 'Departement de Naissance' %><br />
